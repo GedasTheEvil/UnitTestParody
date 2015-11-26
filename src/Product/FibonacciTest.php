@@ -27,7 +27,7 @@ class FibonacciTest extends G\BaseTest
         $end = microtime(true) - $start;
 
         G\Assertion::assertEquals(832040, $fib, 'The Fibonacci should still produce the correct answer');
-        G\Assertion::assertLess(0.1, $end, 'The Fibonacci should not take too long');
+        G\Assertion::assertLess(0.01, $end, 'The Fibonacci should not take too long');
     }
 
     public function testsRunVeryFast()
@@ -39,6 +39,6 @@ class FibonacciTest extends G\BaseTest
 
         G\Assertion::assertTrue(abs(($fib - $expectedApprox) / $expectedApprox) < 0.001,
             'The Fibonacci should still produce a close to correct answer');
-        G\Assertion::assertLess(0.1, $end, 'The Fibonacci should not take too long');
+        G\Assertion::assertLess(0.01, $end, 'The Fibonacci should not take too long');
     }
 }
