@@ -19,4 +19,14 @@ class FibonacciTest extends G\BaseTest
         G\Assertion::assertEquals(5, Fibonacci::get(5), '#5 Number should be Five');
         G\Assertion::assertEquals(8, Fibonacci::get(6), '#6 Number should be Eight');
     }
+
+    public function testRunsFast()
+    {
+        $start = microtime(true);
+        $fib = Fibonacci::get(30);
+        $end = microtime(true) - $start;
+
+        G\Assertion::assertEquals(832040, $fib, 'The Fibonacci should still produce the correct answer');
+        G\Assertion::assertLess(0.1, $end, 'The Fibonacci should not take too long');
+    }
 }
