@@ -28,10 +28,10 @@
         <?php
     } catch (\GedasTheEvil\Unit\AssertionFailed $e) {
         ?>
-        <div class="box fail">
+        <pre class="box fail">
             Passed <?=$test->getTestsPassed()?> out of <?=$test->getTestsTotal()?> and
-            failed with <?$e->getMessage();?>
-        </div>
+            failed with <?=$e->getMessage();?>
+        </pre>
         <?php
     }
 
