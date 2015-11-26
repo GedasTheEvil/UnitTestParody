@@ -13,13 +13,10 @@ class Fibonacci
      */
     public static function get($n)
     {
-       // return 1;
-        switch ($n) {
-           case 1: case 2: return 1; break;
-           case 3: return 2; break;
-           case 4: return 3; break;
-           case 5: return 5; break;
-           case 6: return 8; break;
-       }
+        if ($n < 3) {
+            return 1;
+        }
+
+        return self::get($n - 1) + self::get($n - 2);
     }
 }
