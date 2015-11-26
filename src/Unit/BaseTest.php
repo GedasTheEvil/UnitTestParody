@@ -6,6 +6,7 @@ class BaseTest
 {
     private $testsPassed = 0;
     private $testsTotal = 0;
+    private $lastTest;
 
     /**
      * @throws AssertionFailed
@@ -15,6 +16,7 @@ class BaseTest
         $this->testsPassed = 0;
 
         foreach ($this->getTestList() as $methodName) {
+            $this->lastTest = $methodName;
             $this->$methodName();
             ++$this->testsPassed;
         }
@@ -52,5 +54,13 @@ class BaseTest
     public function getTestsTotal()
     {
         return $this->testsTotal;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastTest()
+    {
+        return $this->lastTest;
     }
 }
