@@ -18,10 +18,23 @@
 </head>
 <body>
     <?php
-        require_once('');
-    ?>
-    <div class="box">
+        require_once('autoload.php');
 
-    </div>
+    try {
+        $test = new GedasTheEvil\Product\FibonacciTest();
+        $test->runTests();
+        ?>
+            <div class="box">All <?=$test->getTestsTotal();?> tests Pass!</div>
+        <?php
+    } catch (\GedasTheEvil\Unit\AssertionFailed $e) {
+        ?>
+        <div class="box fail">
+            Passed <?=$test->getTestsPassed()?> out of <?=$test->getTestsTotal()?> and
+            failed with <?$e->getMessage();?>
+        </div>
+        <?php
+    }
+
+    ?>
 </body>
 </html>

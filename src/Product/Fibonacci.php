@@ -1,5 +1,7 @@
 <?php
 
+namespace GedasTheEvil\Product;
+
 class Fibonacci
 {
     /**

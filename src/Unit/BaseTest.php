@@ -1,6 +1,6 @@
 <?php
 
-namespace GedasTheEvil;
+namespace GedasTheEvil\Unit;
 
 class BaseTest
 {
@@ -16,6 +16,7 @@ class BaseTest
 
         foreach ($this->getTestList() as $methodName) {
             $this->$methodName();
+            ++$this->testsPassed;
         }
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace GedasTheEvil;
+namespace GedasTheEvil\Unit;
 
 class AssertionFailed extends \Exception
 {

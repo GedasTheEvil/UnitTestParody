@@ -1,6 +1,8 @@
 <?php
 
-use GedasTheEvil as G;
+namespace GedasTheEvil\Product;
+
+use GedasTheEvil\Unit as G;
 
 class FibonacciTest extends G\BaseTest
 {
