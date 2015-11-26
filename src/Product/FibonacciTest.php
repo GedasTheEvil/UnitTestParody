@@ -29,4 +29,16 @@ class FibonacciTest extends G\BaseTest
         G\Assertion::assertEquals(832040, $fib, 'The Fibonacci should still produce the correct answer');
         G\Assertion::assertLess(0.1, $end, 'The Fibonacci should not take too long');
     }
+
+    public function testsRunVeryFast()
+    {
+        $start = microtime(true);
+        $fib = Fibonacci::get(300);
+        $end = microtime(true) - $start;
+        $expectedApprox = 2.2223224462942E+62;
+
+        G\Assertion::assertTrue(abs(($fib - $expectedApprox) / $expectedApprox) < 0.001,
+            'The Fibonacci should still produce a close to correct answer');
+        G\Assertion::assertLess(0.1, $end, 'The Fibonacci should not take too long');
+    }
 }
