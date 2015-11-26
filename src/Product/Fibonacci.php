@@ -4,6 +4,8 @@ namespace GedasTheEvil\Product;
 
 class Fibonacci
 {
+    private static $valueCache = [0, 1, 1];
+
     /**
      * Should Return the N-th Fibonacci number
      *
@@ -13,10 +15,12 @@ class Fibonacci
      */
     public static function get($n)
     {
-        if ($n < 3) {
-            return 1;
+        if (isset(self::$valueCache[$n])) {
+            return self::$valueCache[$n];
         }
 
-        return self::get($n - 1) + self::get($n - 2);
+        self::$valueCache[$n] = self::get($n - 1) + self::get($n - 2);
+
+        return self::$valueCache[$n];
     }
 }
