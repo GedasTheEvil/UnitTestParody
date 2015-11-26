@@ -14,9 +14,9 @@ class FibonacciTest extends G\BaseTest
 
     public function testNextNumbers()
     {
-        G\Assertion::assertEquals(2, Fibonacci::get(3), 'First Number should be one');
-        G\Assertion::assertEquals(3, Fibonacci::get(4), 'Second Number should be one');
-        G\Assertion::assertEquals(5, Fibonacci::get(5), 'Second Number should be one');
-        G\Assertion::assertEquals(8, Fibonacci::get(6), 'Second Number should be one');
+        G\Assertion::assertEquals(2, Fibonacci::get(3), 'First Number should be two');
+        G\Assertion::assertEquals(3, Fibonacci::get(4), 'Second Number should be three');
+        G\Assertion::assertEquals(5, Fibonacci::get(5), 'Second Number should be five');
+        G\Assertion::assertEquals(8, Fibonacci::get(6), 'Second Number should be eight');
     }
 }
