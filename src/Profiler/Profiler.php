@@ -89,24 +89,24 @@ class Profiler
     {
         $result = "\n<table>\n";
         $result .= "\t<tr>\n";
-        $result .= "\t\t<th>Method</th>th>\n";
-        $result .= "\t\t<th>Times Run</th>th>\n";
-        $result .= "\t\t<th>Total Run Time</th>th>\n";
-        $result .= "\t\t<th>Average Time Per Run</th>th>\n";
+        $result .= "\t\t<th>Method</th>\n";
+        $result .= "\t\t<th>Times Run</th>\n";
+        $result .= "\t\t<th>Total Run Time</th>\n";
+        $result .= "\t\t<th>Average Time Per Run</th>\n";
         $result .= "\t</tr>\n";
 
         foreach (self::sortBy('total_time_taken', self::$profileData) as $data) {
             $result .= "\t<tr>\n";
             $time = number_format($data['total_time_taken'], 4);
             $averageTime = number_format($data['total_time_taken'] / $data['times_run'], 8);
-            $result .= "\t\t<td>{$data['method']}</td>td>\n";
-            $result .= "\t\t<td>{$data['times_run']}</td>td>\n";
-            $result .= "\t\t<td>{$time} s</td>td>\n";
-            $result .= "\t\t<td>{$averageTime} s</td>td>\n";
+            $result .= "\t\t<td>{$data['method']}</td>\n";
+            $result .= "\t\t<td>{$data['times_run']}</td>\n";
+            $result .= "\t\t<td>{$time} s</td>\n";
+            $result .= "\t\t<td>{$averageTime} s</td>\n";
             $result .= "\t</tr>\n";
         }
 
-        $result = "</table>\n";
+        $result .= "</table>\n";
 
         return $result;
     }
