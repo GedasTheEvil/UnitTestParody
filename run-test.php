@@ -1,40 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
+<?php
 
-        .box {
-            background: #43e151;
-            border: solid green 4px;
-            padding: 8px;
-            margin:8px;
-        }
+require_once('autoload.php');
+include('static/top.php');
 
-        .fail {
-            border-color: red;
-            background: #df5844;
-        }
-    </style>
-</head>
-<body>
-    <?php
-        require_once('autoload.php');
-
-    try {
-        $test = new GedasTheEvil\Product\FibonacciTest();
-        $test->runTests();
-        ?>
-            <div class="box">All <?=$test->getTestsTotal();?> tests Pass!</div>
-        <?php
-    } catch (\GedasTheEvil\Unit\AssertionFailed $e) {
-        ?>
-        <pre class="box fail">
-            Passed <?=$test->getTestsPassed()?> out of <?=$test->getTestsTotal()?> and
-            failed in <?=$test->getLastTest()?> with "<?=$e->getMessage();?>"
-        </pre>
-        <?php
-    }
-
+try {
+    $test = new GedasTheEvil\Product\FibonacciTest();
+    $test->runTests();
     ?>
-</body>
-</html>
+    <div class="box">All <?= $test->getTestsTotal(); ?> tests Pass!</div>
+    <?php
+} catch (\GedasTheEvil\Unit\AssertionFailed $e) {
+    ?>
+    <pre class="box fail">
+        Passed <?= $test->getTestsPassed() ?> out of <?= $test->getTestsTotal() ?> and
+        failed in <?= $test->getLastTest() ?> with "<?= $e->getMessage(); ?>"
+    </pre>
+    <?php
+}
+include('static/bottom.php');
