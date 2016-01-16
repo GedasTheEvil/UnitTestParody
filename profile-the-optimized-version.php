@@ -8,7 +8,7 @@ use \GedasTheEvil\Product\Fibonacci;
 $test = basename(__FILE__);
 Profiler::start($test);
 
-Fibonacci::get(30);
+Fibonacci::get(3000);
 
 Profiler::end($test);
 echo Profiler::getHtmlReportContent();
