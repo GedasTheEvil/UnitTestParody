@@ -20,5 +20,5 @@ Total operation time is calculated `c * n` where *c* is the time taken per opera
 operation. Many people would start reducing the *c*, but that would not be event visible for algorithms of high 
 complexities.
 
-As in this example the complexity of the slow fibonacci is around (2^(n * 0.6)) in other words O(2^n)
+As in this example the complexity of the slow fibonacci is around (2^(n * 0.6)) in other words  o(2^(n/2)) - O(2^n)
  and the optimized version complexity is around 2n, in other words O(n). 
